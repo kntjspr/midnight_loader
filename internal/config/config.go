@@ -15,5 +15,9 @@ type BuildConfig struct {
 	SleepDelay    bool `json:"sleep_delay"`
 	HideDirectory bool `json:"hide_directory"`
 
+	StartupEntryName string `json:"startup_entry_name"`
+	DirectoryName    string `json:"directory_name"`
+	FileName         string `json:"file_name"`
+
 	OutputPath string `json:"output_path"`
 }
