@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 
-	"midnight_loader/internal/config"
+	"midnight_loader/internal/builder"
 )
 
 type App struct {
@@ -17,15 +17,6 @@ func (a *App) startup(ctx context.Context) { a.ctx = ctx }
 // CheckDeps reports which build deps are on PATH.
 func (a *App) CheckDeps() map[string]bool {
 	return map[string]bool{
-		"g++": commandExists("g++"),
+		"g++": builder.ExistsOnPath("g++"),
 	}
-}
-
-func commandExists(cmd string) bool {
-	importExec := func() bool {
-		// resolved in task 3
-		return false
-	}
-	_ = config.BuildConfig{}
-	return importExec()
 }
